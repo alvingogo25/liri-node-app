@@ -11,9 +11,24 @@ var client = new Twitter(keys.twitter);
 var user_method = process.argv[2];
 var user_input = process.argv[3];
 
+tweets();
+music();
+movie();
+random();
+
 function tweets() {
 	if (user_method === 'my-tweets') {
-		console.log('show tweets');
+		var params = {
+			screen_name: 'go_alvin_go'
+		};
+		client.get('statuses/user_timeline', params, function(error, tweets, response) {
+			if (!error) {
+				// console.log(tweets);
+				for (var i = 0; i < tweets.length; i++) {
+					console.log((i + 1) + '. ' + tweets[i].text);
+				}
+			}
+		});
 	}
 };
 
@@ -34,7 +49,7 @@ function music() {
 		})
 	}
 };
-music ();
+
 
 
 function movie() {
