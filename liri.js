@@ -34,21 +34,45 @@ function tweets() {
 
 
 function music() {
-	if (user_method === 'spotify-this-song') {
-		spotify.search({
-			type: 'track',
-			query: user_input
-		}, function(err, data) {
-			if (err) {
-				console.log('Error occurred: ' + err);
-				return;
-			} else {
-				// console.log(JSON.stringify(data, null, 2));
-				console.log(data.tracks.items[0].album.name);
+	if (user_method === 'spotify-this-song' && user_input) {
+		musicSearch(user_input);
+	}
+	else {
+		var ace = [
+			{
+				type: 'track',
+				query: 'The Sign'
+			},
+			{
+				type: 'artist',
+				query: 'Ace of Base'
 			}
-		})
+		];
+
+		musicSearch(ace);
 	}
 };
+function musicSearch(song) {
+	spotify.search({
+		type: 'track',
+		query: song
+	}, function(err, data) {
+		if (err) {
+			console.log('Error occurred: ' + err);
+			return;
+		} else {
+			var song = data.tracks.items[0];
+			// console.log(JSON.stringify(data, null, 2));
+			console.log("Here are the artist(s):")
+			for (var i = 0; i < song.artists.length; i++) {
+				console.log("\t" + song.artists[i].name);
+			}
+			console.log("Album name: " + song.album.name);
+			console.log("Song name: " + song.name);
+			console.log("Preview link: " + song.preview_url);
+		}
+	})
+}
 
 
 
@@ -61,6 +85,7 @@ function movie() {
 		}
 	};
 };
+
 
 function random() {
 	if (user_method === 'do-what-it-says') {
