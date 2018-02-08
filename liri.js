@@ -12,7 +12,7 @@ var user_method = process.argv[2];
 var user_input = process.argv[3];
 
 tweets();
-music();
+// music();
 movie();
 random();
 
@@ -37,9 +37,8 @@ function music() {
 	if (user_method === 'spotify-this-song' && user_input) {
 		musicSearch(user_input);
 	}
-	else {
-		var ace = [
-			{
+	if (user_method === 'spotify-this-song' && !user_input){
+		var ace = [{
 				type: 'track',
 				query: 'The Sign'
 			},
@@ -52,6 +51,7 @@ function music() {
 		musicSearch(ace);
 	}
 };
+
 function musicSearch(song) {
 	spotify.search({
 		type: 'track',
@@ -61,15 +61,17 @@ function musicSearch(song) {
 			console.log('Error occurred: ' + err);
 			return;
 		} else {
-			var song = data.tracks.items[0];
-			// console.log(JSON.stringify(data, null, 2));
-			console.log("Here are the artist(s):")
-			for (var i = 0; i < song.artists.length; i++) {
-				console.log("\t" + song.artists[i].name);
+			var song = data.tracks.items;
+			console.log("\nQuery Search: ", user_input);
+			for (var j = 0; j < song.length; j++) {
+				console.log("\nHere are the artist(s):")
+				for (var i = 0; i < song[j].artists.length; i++) {
+					console.log("\t" + song[j].artists[i].name);
+				}
+				console.log("Album name: " + song[j].album.name);
+				console.log("Song name: " + song[j].name);
+				console.log("Preview link: " + song[j].preview_url);
 			}
-			console.log("Album name: " + song.album.name);
-			console.log("Song name: " + song.name);
-			console.log("Preview link: " + song.preview_url);
 		}
 	})
 }
@@ -77,14 +79,16 @@ function musicSearch(song) {
 
 
 function movie() {
-	if (user_method === 'movie-this') {
-		if (process.argv[3]) {
-			console.log(process.argv[3])
-		} else {
-			console.log('Mr. Nobody');
-		}
-	};
+	if (user_method === 'movie-this' && user_input) {
+		console.log(process.argv[3])
+		request("http://www.omdbapi.com/?t=" + user_input + "&apikey=6f377c58", function (response, body) {
+			console.log(body.body)
+		})
+	} else {
+		console.log('Mr. Nobody');
+	}
 };
+
 
 
 function random() {
