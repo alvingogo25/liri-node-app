@@ -6,13 +6,13 @@ You can search for music, movies, tweets, or try a random function.
 ### Instructions
 
 #### To search for music:
-node liri spotify-this-song 'YOUR SONG HERE'
+node liri spotify-this-song 'SONG NAME'
 
 #### To search for movies:
- node liri movie-this 'YOUR MOVIE'
+ node liri movie-this 'MOVIE TITLE'
 
 #### To search for recent tweets:
- node liri my-tweets 'YOUR USERNAME'
+ node liri my-tweets 'TWITTER USERNAME'
 
 #### To try something random:
  node liri do-what-it-says
