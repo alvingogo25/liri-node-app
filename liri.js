@@ -35,11 +35,15 @@ function liri() {
 	}
 }
 
-liri(user_method, user_input);
+liri();
 
 function tweets() {
+	var sn = 'go_alvin_go';
+	if (user_input) {
+		sn = user_input;
+	};
 	var params = {
-		screen_name: 'go_alvin_go'
+		screen_name: sn
 	};
 	client.get('statuses/user_timeline', params, function(error, tweets, response) {
 		if (!error) {
@@ -51,16 +55,11 @@ function tweets() {
 	});
 };
 
-
 function music() {
-	if (user_input) {
-		musicSearch(user_input);
-	} else {
-		musicSearch("The Sign Ace of Base");
+	var song = 'The Sign Ace of Base';
+	if (user_input){
+		song = user_input;
 	}
-};
-
-function musicSearch(song) {
 	spotify.search({
 		type: 'track',
 		query: song,
@@ -86,14 +85,10 @@ function musicSearch(song) {
 };
 
 function movie() {
-	if (user_input) {
-		movieSearch(user_input);
-	} else {
-		movieSearch('Mr. Nobody');
+	var film = 'Mr. Nobody';
+	if (user_input){
+		film = user_input;
 	}
-};
-
-function movieSearch(film) {
 	request("http://www.omdbapi.com/?t=" + film + "&apikey=6f377c58", function(response, body) {
 		// console.log(JSON.parse(body.body));
 		var movieObj = JSON.parse(body.body);
@@ -111,7 +106,7 @@ function random() {
 		var dataArr = data.split(",");
 		user_method = dataArr[0];
 		user_input = dataArr[1];
-		liri(user_method, user_input);
+		liri();
 	});
 };
 

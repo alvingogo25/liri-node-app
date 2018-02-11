@@ -16,3 +16,16 @@ Method: spotify-this-song Query:
 Method: do-what-it-says Query: 
 Method: do-what-it-says Query: 
 Method: my-tweets Query: 
+Method: my-tweets Query: 
+Method: my-tweets Query: 
+Method: my-tweets Query: TeamBandL 
+Method: spotify-this-song Query: 
+Method: spotify-this-song Query: where are u now 
+Method: do-what-it-says Query: 
+Method: movie-this Query: 
+Method: movie-this Query: batman begins 
+Method: movie-this Query: se7en 
+Method: movie-this Query: se7en 
+Method: movie-this Query: batman begins 
+Method: do-what-it-says Query: 
+Method: my-tweets Query: TeamBandL 
