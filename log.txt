@@ -2,3 +2,17 @@ Method: movie-this Query: 9
 Method: spotify-this-song Query: deep down low
 
 Method: movie-this Query: batman begins 
+Method: movi-this Query: 
+Method: movie-this Query: 
+Method: do-what-it-says Query: 
+Method: do-what-it-says Query: 
+Method: do-what-it-says Query: 
+Method: do-what-it-says Query: 
+Method: spotify-this-song Query: 
+Method: spotify-this-song Query: 
+Method: my-tweets Query: 
+Method: my-tweets Query: 
+Method: spotify-this-song Query: 
+Method: do-what-it-says Query: 
+Method: do-what-it-says Query: 
+Method: my-tweets Query: 

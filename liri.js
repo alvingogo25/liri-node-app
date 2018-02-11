@@ -20,19 +20,22 @@ function inputs() {
 
 inputs();
 
-if (user_method === 'my-tweets') {
-	tweets();
-}
-if (user_method === 'spotify-this-song') {
-	music();
-}
-if (user_method === 'movie-this') {
-	movie();
-}
-if (user_method === 'do-what-it-says') {
-	random();
+function liri() {
+	if (user_method === 'my-tweets') {
+		tweets();
+	}
+	if (user_method === 'spotify-this-song') {
+		music();
+	}
+	if (user_method === 'movie-this') {
+		movie();
+	}
+	if (user_method === 'do-what-it-says') {
+		random();
+	}
 }
 
+liri(user_method, user_input);
 
 function tweets() {
 	var params = {
@@ -100,8 +103,16 @@ function movieSearch(film) {
 }
 
 function random() {
-
-	console.log('calls command in random.txt');
+	fs.readFile("random.txt", "utf8", function(error, data) {
+		if (error) {
+			return console.log(error);
+		}
+		// console.log(data);
+		var dataArr = data.split(",");
+		user_method = dataArr[0];
+		user_input = dataArr[1];
+		liri(user_method, user_input);
+	});
 };
 
 var log = "\nMethod: " + user_method + " Query: " + user_input;
