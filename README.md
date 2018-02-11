@@ -6,16 +6,16 @@ You can search for music, movies, tweets, or try a random function.
 ### Instructions
 
 #### To search for music:
-node liri spotify-this-song 'SONG NAME'
+**spotify-this-song** 'SONG NAME'
 
 #### To search for movies:
- node liri movie-this 'MOVIE TITLE'
+**movie-this** 'MOVIE TITLE'
 
 #### To search for recent tweets:
- node liri my-tweets 'TWITTER USERNAME'
+**my-tweets** 'TWITTER USERNAME'
 
 #### To try something random:
- node liri do-what-it-says
+**do-what-it-says**
 
 ### Example
 ```
