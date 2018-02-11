@@ -21,6 +21,7 @@ You can search for music, movies, tweets, or try a random function.
 ```
 node liri movie-this batman begins
 node liri my-tweets NBA
+node liri spotify-this-song
 ```
 
 
