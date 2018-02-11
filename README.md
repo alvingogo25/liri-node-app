@@ -5,21 +5,21 @@ You can search for music, movies, tweets, or try a random function.
 
 ### Instructions
 
-##### To search for music:
+#### To search for music:
 node liri spotify-this-song 'YOUR SONG HERE'
 
-##### To search for movies:
+#### To search for movies:
  node liri movie-this 'YOUR MOVIE'
 
-##### To search for recent tweets:
+#### To search for recent tweets:
  node liri my-tweets 'YOUR USERNAME'
 
-##### To try something random:
+#### To try something random:
  node liri do-what-it-says
 
 ### Example
-```node liri movie-this batman begins```
-```node liri my-tweets NBA```
+```node liri movie-this batman begins
+node liri my-tweets NBA```
 
 
 **Note:**
