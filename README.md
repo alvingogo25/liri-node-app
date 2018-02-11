@@ -25,5 +25,4 @@ node liri my-tweets NBA
 
 
 **Note:**
-- Your input does not need to be in quotes.
 - Your inputs are not necessary as there are default searches.
