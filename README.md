@@ -17,6 +17,9 @@ You can search for music, movies, tweets, or try a random function.
 ### To try something random:
 **do-what-it-says**
 
+### To view the log of searches:
+**get-data***
+
 ## Example
 ```
 node liri movie-this batman begins

@@ -33,6 +33,11 @@ function liri() {
 	if (user_method === 'do-what-it-says') {
 		random();
 	}
+	if (user_method === 'get-data'){
+		fs.readFile("log.txt", "utf8", function(error, data) {
+      console.log(data);
+    });
+	}
 }
 
 liri();
