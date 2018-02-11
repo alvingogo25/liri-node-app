@@ -18,8 +18,10 @@ node liri spotify-this-song 'YOUR SONG HERE'
  node liri do-what-it-says
 
 ### Example
-```node liri movie-this batman begins
-node liri my-tweets NBA```
+```
+node liri movie-this batman begins
+node liri my-tweets NBA
+```
 
 
 **Note:**
